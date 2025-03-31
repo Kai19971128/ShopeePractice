@@ -1,5 +1,6 @@
 import React from "react";
 import DefaultLayout from "../components/layout/DefaultLayout";
+import Clearfix  from "../components/common/clearfix";
 
 const ProductCollectionPage = () => {
     return (
