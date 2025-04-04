@@ -6,6 +6,7 @@ import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
+import Flexbox from "../common/Flexbox";
 
 const { Search } = Input;
 const suffix = (
@@ -21,19 +22,16 @@ const HeaderWrapper = styled.header`
     display: flex;
     background-color: #d1011c;
     width: 100vw;
+    min-height: 64px;
     padding: 16px;
-    ${(props) => props.$fixed && css`
+    ${(props) => props.fixed && css`
         position: fixed;
         top: 0; /* 建議加上 top: 0 確保固定在頂部 */
         left: 0; /* 確保水平定位 */
         z-index: 1000; /* 確保在其他內容之上 */
     `}
 `;
-const StyleHeaderSection = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`;
+
 const Navigator = styled.div`
     a{
         margin: 0 4px;
@@ -48,15 +46,15 @@ const ToolBar = styled.div`
         text-decoration: none;
     }
 `;
-const Flex = styled.div`
-    display: flex;
-    align-items: center;
-`;
+
 const Header = ({ $fixed }) => {
     return (
-        <HeaderWrapper $fixed={$fixed}>
+        <HeaderWrapper fixed={$fixed}>
             <Container>
-                <StyleHeaderSection>
+                <Flexbox 
+                justify="space-between"
+                align="center"
+                >
                     <Navigator>
                         <Link to="/">蝦皮購物</Link>
                         <Link to="/">下載</Link>
@@ -68,13 +66,15 @@ const Header = ({ $fixed }) => {
                         <Link to="/">幫助中心</Link>
                         <Link to="/">帳號</Link>   
                     </ToolBar>
-                </StyleHeaderSection>
+                </Flexbox>
 
-                <StyleHeaderSection>
+                <Flexbox    
+                justify="space-between" 
+                align="center">
                     <Link to="/">
                         <img src={logo} alt="logo" height={64}/>
                     </Link>
-                    <Flex>
+                    <Flexbox>
                             <Search
                             style={{marginRight:8}}
                             placeholder="在商城搜尋"
@@ -86,8 +86,8 @@ const Header = ({ $fixed }) => {
                         <Link to="/cart">
                             <ShoppingCartOutlined  style={{fontSize:32,color:'#fff'}}/>
                         </Link>
-                    </Flex>
-                </StyleHeaderSection >
+                    </Flexbox>
+                </Flexbox>
             </Container>
         </HeaderWrapper>
     );
