@@ -24,7 +24,7 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/mall/:categoryName" element={<ProductCollectionPage />} />
-        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/:product" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   )

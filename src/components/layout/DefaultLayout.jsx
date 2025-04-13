@@ -4,14 +4,18 @@ import Header from "./header";  // 確保路徑正確
 import Container from "../common/container";
 import Footer from "./footer";
 
+const LayoutWrapper=styled.div`
+    width: 100%;
+`
+
 const DefaultLayout = ({ fixedHeader, children }) => {
     return (
-        <div>
+        <LayoutWrapper>
             <Header $fixed={fixedHeader}>
             </Header>
             <Container>{children}</Container>
             <Footer />
-        </div>
+        </LayoutWrapper>
     );
 };
 

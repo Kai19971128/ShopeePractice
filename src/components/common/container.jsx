@@ -5,6 +5,9 @@ import styled from "styled-components";
 const Container = styled.div`
     width: 95%;
     margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    
     @media screen and (min-width: 769px) {
         width: 80%;
     }

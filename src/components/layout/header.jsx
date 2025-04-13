@@ -68,15 +68,22 @@ const Header = ({ $fixed }) => {
                     </ToolBar>
                 </Flexbox>
 
-                <Flexbox    
+                <Flexbox
+                maxWidth="100%"
+                margin="5px 0"
                 justify="space-between" 
                 align="center">
                     <Link to="/">
                         <img src={logo} alt="logo" height={64}/>
                     </Link>
-                    <Flexbox>
+                    <Flexbox
+                    justify="flex-end"
+                    >
                             <Search
-                            style={{marginRight:8}}
+                            style={{
+                                marginRight:8,
+                                maxWidth: '400px'
+                            }}
                             placeholder="在商城搜尋"
                             allowClear
                             enterButton="Search"
