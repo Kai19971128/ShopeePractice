@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 
 const Container = styled.div`
-    width: 95%;
+    width: 80%;
     margin: 0 auto;
     max-width: 100%;
     box-sizing: border-box;
+    padding: 16px;
     
-    @media screen and (min-width: 769px) {
-        width: 80%;
+    @media screen and (max-width: 769px) {
+        width: 0%;
     }
 `;
 

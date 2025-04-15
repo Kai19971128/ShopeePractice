@@ -64,11 +64,22 @@ const BannerFeatureContainer = styled(Flexbox)`
     box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
 `;
 const ProductCollectionContainer = styled(Flexbox)`
- 
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 48px;
 `
 const ProductContainer = styled.div`
-    width: 16.67%;
-    min-height:200px;
+    width: calc(16.66% - 4px);
+    margin-bottom:12px ;
+    
+    
+    @media screen and (max-width: 768px) {
+        width: calc(20% - 4px);
+    }
+    @media screen and (max-width: 576px) {
+        width:calc(50% - 4px);
+    }
 `
 
 const Image = styled.img`
@@ -131,19 +142,167 @@ const HomePage = () => {
                     </Flexbox>
                 </Flexbox>
             </BannerFeatureContainer>
-            <Flexbox justify="center" maxWidth="1200px" margin="0 auto 24px auto">
+            <Flexbox justify="center" maxWidth="1200px" margin="0 auto 48px auto">
                 <StyledLink to="/P006" >
                     <Image src={carousel2} alt="banner1" width="100%" height="100px" />
                 </StyledLink>
             </Flexbox>
             <ProductCollectionContainer>
                 <ProductContainer>
-                    <ProductCard/>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P001">
+                    <ProductCard title="test" coverUrl={carousel1} salePrices={[100]} listPrices={[200]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P002">
+                    <ProductCard title="test" coverUrl={carousel2} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
+                </ProductContainer>
+                <ProductContainer>
+                    <Link to="/P003">   
+                    <ProductCard title="test" coverUrl={carousel3} salePrices={[100 ,200]} listPrices={[200,299]}/>
+                    </Link>
                 </ProductContainer>
             </ProductCollectionContainer>
 
+
         </DefaultLayout>
     );
-};
+}
 
 export default HomePage;

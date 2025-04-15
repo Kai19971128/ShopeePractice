@@ -23,12 +23,12 @@ const HeaderWrapper = styled.header`
     background-color: #d1011c;
     width: 100vw;
     min-height: 64px;
-    padding: 16px;
+    justify-content: center;
     ${(props) => props.fixed && css`
         position: fixed;
-        top: 0; /* 建議加上 top: 0 確保固定在頂部 */
-        left: 0; /* 確保水平定位 */
-        z-index: 1000; /* 確保在其他內容之上 */
+       top: 0;
+        left: 0;
+        z-index: 20;
     `}
 `;
 
@@ -68,17 +68,11 @@ const Header = ({ $fixed }) => {
                     </ToolBar>
                 </Flexbox>
 
-                <Flexbox
-                maxWidth="100%"
-                margin="5px 0"
-                justify="space-between" 
-                align="center">
+                <Flexbox maxWidth="100%"margin="5px 0"justify="space-between" align="center">
                     <Link to="/">
                         <img src={logo} alt="logo" height={64}/>
                     </Link>
-                    <Flexbox
-                    justify="flex-end"
-                    >
+                    <Flexbox justify="flex-end">
                             <Search
                             style={{
                                 marginRight:8,
