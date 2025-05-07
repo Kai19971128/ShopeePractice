@@ -18,7 +18,18 @@ import ScrollToTop from 'react-scroll-to-top'
 import LoginPage from './pages/LoginPage.jsx' 
 
 function App() {
-
+  function RootPathTest() {
+    useEffect(() => {
+      console.log("RootPathTest component is rendering for path='/'");
+    }, []);
+    return (
+      <div style={{ padding: "20px", textAlign: "center", backgroundColor: "lightyellow" }}>
+        <h1>這是首頁路徑測試</h1>
+        <p>如果看到這個頁面，表示 path="/" 路由匹配成功。</p>
+        <p>接下來請檢查 HomePage.jsx 是否有重新導向或直接渲染了產品頁面。</p>
+      </div>
+    );
+  }
 
   return (
     <AuthProvider>
