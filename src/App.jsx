@@ -60,7 +60,7 @@ function App() {
             它應該放在所有其他更具體的路徑之後，以避免意外攔截其他路由。
             例如，如果 URL 是 /ShopeePractice/about，且沒有定義 /about 路由，它將匹配此處。
           */}
-          <Route path="/:product" element={<ProductPage />} />
+          
 
           {/* 如果一開始的 <Route path="/" element={<Navigate to="/mall" />} /> 是為了避免根路徑空白，
             現在直接渲染 HomePage 就不再需要那個 Navigate 了。
