@@ -24,7 +24,7 @@ function App() {
   return (
     
     <AuthProvider>
-    <BrowserRouter basename="/ShopeePractice">
+    <BrowserRouter >
     <JumpToTop />
     <ScrollToTop />
       <PageTitle />
