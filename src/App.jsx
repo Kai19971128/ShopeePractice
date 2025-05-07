@@ -31,9 +31,9 @@ function App() {
           <Route path="/mall" element={<HomePage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/login" element={<LoginPage/>} />
           <Route path="/mall/:categoryName" element={<ProductCollectionPage />} />
           <Route path="/:product" element={<ProductPage />} />
-          <Route path="/login" element={<LoginPage/>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
