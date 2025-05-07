@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Flexbox = styled.div`
     display: flex;
-    flex-direction: ${props => props.direction};
+    flex-direction: ${props => props.direction };
     justify-content: ${props => props.justify};
     justify-items: ${props => props.justifyItems};
     justify-self: ${props => props.justifySelf};

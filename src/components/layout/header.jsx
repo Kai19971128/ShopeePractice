@@ -1,13 +1,13 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import Container from "../common/container";
+import Container from "../common/Container";
 import logo from "../../Imgs/shopee-logo.png";
 import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 import Flexbox from "../common/Flexbox";
-
+import AuthContext from "../auth/AuthContext";
 const { Search } = Input;
 const suffix = (
     <AudioOutlined
@@ -21,7 +21,7 @@ const suffix = (
 const HeaderWrapper = styled.header`
     display: flex;
     background-color: #d1011c;
-    width: 100vw;
+    width: 100%;
     min-height: 64px;
     justify-content: center;
     ${(props) => props.fixed && css`
@@ -39,7 +39,7 @@ const Navigator = styled.div`
         text-decoration: none;
     }
 `;
-const ToolBar = styled.div`
+const ToolBar = styled(Flexbox)`
     a{
         margin: 0 6px;
         color: #fff;
@@ -48,6 +48,7 @@ const ToolBar = styled.div`
 `;
 
 const Header = ({ $fixed }) => {
+    const {isAuthenticated,logout} = React.useContext(AuthContext);
     return (
         <HeaderWrapper fixed={$fixed}>
             <Container>
@@ -64,20 +65,22 @@ const Header = ({ $fixed }) => {
                     <ToolBar>
                         <Link to="/">通知</Link>
                         <Link to="/">幫助中心</Link>
-                        <Link to="/">帳號</Link>   
+                        {isAuthenticated ? (
+                            <div>
+                                <Link to="/">我的帳號</Link>
+                                <span onClick={()=>logout()}>登出</span>
+                            </div>
+                            ):(
+                            <Link to="/login">登入</Link>)}
                     </ToolBar>
                 </Flexbox>
 
-                <Flexbox maxWidth="100%"margin="5px 0"justify="space-between" align="center">
+                <Flexbox maxwidth="100%"margin="5px 0"justify="space-between" align="center">
                     <Link to="/">
                         <img src={logo} alt="logo" height={64}/>
                     </Link>
                     <Flexbox justify="flex-end">
                             <Search
-                            style={{
-                                marginRight:8,
-                                maxWidth: '400px'
-                            }}
                             placeholder="在商城搜尋"
                             allowClear
                             enterButton="Search"

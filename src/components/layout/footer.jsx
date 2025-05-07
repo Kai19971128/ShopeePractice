@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Container from "../common/container";
+import Container from "../common/Container";
 import Flexbox from "../common/Flexbox";
 import { Link } from "react-router-dom";
 import logistic1 from "../../Imgs/logistic/image1.svg"
@@ -18,7 +18,7 @@ import GooglePlay from "../../Imgs/download/10003.png"
 
 
 const FooterWrapper = styled.footer`
-   width: 100vw;
+   width: 100%;
    min-height: 100px;
    background-color: #fbfbfb;
    padding:40px 0 20px 0;
