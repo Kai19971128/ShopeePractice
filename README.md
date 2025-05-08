@@ -1,10 +1,11 @@
+###線上預覽  
+https://kai19971128.github.io/ShopeePractice/  
+  
 #蝦皮電商網站練習專案  
 這是一份用來總結課程的實戰練習，主題是模仿蝦皮購物網，目的是實際應用課程所學技術。  
 
 **專案狀態**:仍在進行中  
 
-###線上預覽  
-https://kai19971128.github.io/ShopeePractice/  
   
 ##專案截圖  
 <img src="READMEImg/HomePageScreenShots.png" alt="首頁截圖" width="300"/>  
