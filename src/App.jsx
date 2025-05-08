@@ -25,7 +25,7 @@ function App() {
       {/* BrowserRouter 設定 basename 以對應 GitHub Pages 的子目錄 */}
       <BrowserRouter basename="/ShopeePractice">
         <JumpToTop /> {/* 確保路由變化時滾動到頁面頂部 */}
-        <ScrollToTop smooth component={<p style={{ color: "blue" }}>UP</p>} /> {/* 一個向上滾動的按鈕 */}
+        <ScrollToTop smooth  /> {/* 一個向上滾動的按鈕 */}
         <PageTitle /> {/* 動態設定頁面標題的元件 */}
         <Routes>
           {/* 靜態路徑應優先定義 */}

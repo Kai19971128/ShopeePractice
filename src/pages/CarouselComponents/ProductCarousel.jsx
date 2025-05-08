@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Carousel ,Image as AntdImg } from "antd";
+import { Carousel ,Image } from "antd";
 import ProductPreview1 from "../../Imgs/productPage/productPreview/10001.jpg"
 import ProductPreview2 from "../../Imgs/productPage/productPreview/10002.jpg"
 import ProductPreview3 from "../../Imgs/productPage/productPreview/10003.jpg"
@@ -60,33 +60,15 @@ const ImgContainer = styled.div`
         outline: none;
        }
 `
-const CarouselImg = styled(
-    ({className,preview:externalPreview,...restProps}) => {
-        const mergedPreviewConfig ={
-            ...(externalPreview || {}),
-            toolbarRender : () =>null,
-        }
-        return(
-            <AntdImg
-                className={className}
-                {...restProps}
-                preview={mergedPreviewConfig}
-
-            />
-        )
-    }
-    
-)`
+const CarouselImg = styled(Image)`
  height: 85px;
-  border: 2px solid transparent; /* 預設透明邊框佔位 */
-  box-sizing: border-box; /* 確保 border 和 padding 包含在 height/width 內 */
-
-  img {
-    /* ... */
-  }
-
   &:hover {
-    border-color: #e65d0d; /* hover 時只改變邊框顏色 */
+    border-color: #e65d0d;
+  }
+   .ant-image-mask{
+    &:hover{
+  
+    }
   }
 `
 // Image的遮罩擋住了Carousel的樣式，要刪除或改寫遮罩
