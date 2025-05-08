@@ -6,10 +6,7 @@
 ###線上預覽[https://kai19971128.github.io/ShopeePractice/]
 https://kai19971128.github.io/ShopeePractice/
 
-##專案截圖
-![首頁截圖](READMEImg/HomePageScreenShots.png)
-![登入頁截圖](READMEImg/LoginScreenShots.png)
-![產品頁截圖](READMEImg/ProductScreenShots.png)
+
 
 ##透過這個專案，我練習了:
     1.前端路由規劃
