@@ -6,6 +6,10 @@
 ###線上預覽[https://kai19971128.github.io/ShopeePractice/]
 https://kai19971128.github.io/ShopeePractice/
 
+##專案截圖
+<img src="READMEImg/HomePageScreenShots.png" alt="首頁截圖" width="300"/>
+<img src="READMEImg/LoginScreenShots.png" alt="登入頁截圖" width="300"/>
+<img src="READMEImg/ProductScreenShots.png" alt="產品頁截圖" width="300"/>
 
 
 ##透過這個專案，我練習了:
