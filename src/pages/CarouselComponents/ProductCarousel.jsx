@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import styled from "styled-components";
 import { Carousel ,Image } from "antd";
 import ProductPreview1 from "../../Imgs/productPage/productPreview/10001.jpg"
@@ -59,31 +59,49 @@ const ImgContainer = styled.div`
     &:focus-visible{
         outline: none;
        }
-`
+       .ant-image-mask{
+        display: none;
+    }
+    `
 const CarouselImg = styled(Image)`
  height: 85px;
-  &:hover {
-    border-color: #e65d0d;
-  }
-   .ant-image-mask{
-    &:hover{
-  
-    }
-  }
+ cursor: pointer;
+ &:hover {
+ border: 2px solid #e65d0d;
+ }
+ 
+ 
 `
-// Image的遮罩擋住了Carousel的樣式，要刪除或改寫遮罩
+
 
 
 // Javascript code
-const ProductCarousel = () => {
+const initialCarouselImages = [
+    ProductPreview1,
+    ProductPreview2,
+    ProductPreview3,
+    ProductPreview4,
+    ProductPreview5,
+    ProductPreview6
+]
+const ProductCarousel = ({ mainImageToDisplay, onInternalThumbnailHover }) => {
     
-    const [mainImgSrc, setMainImgSrc] = React.useState(ProductPreview1);
-    const handleThumbnailHover = (imgSrc)=>{
-        setMainImgSrc(imgSrc);
-    }
+     const [internalPreviewSrc, setInternalPreviewSrc] = useState(mainImageToDisplay || initialCarouselImages[0])
+
+     useEffect(() => {
+        if (mainImageToDisplay) {
+            setInternalPreviewSrc(mainImageToDisplay);
+        }
+    }, [mainImageToDisplay]);
+    const handleInternalHover = (imgSrc) => {
+        setInternalPreviewSrc(imgSrc); // 更新 ProductCarousel 自己的主圖
+        if (onInternalThumbnailHover) { // 如果父元件傳了這個 callback
+            onInternalThumbnailHover(imgSrc); // 通知父元件
+        }
+    };
     return (
         <>
-        <StyleProductPreview src={mainImgSrc} alt="Product Preview"/>
+        <StyleProductPreview src={internalPreviewSrc} alt="Product Preview"/>
         <StyleCarouselWrapper  
         slidesToShow={5} 
         slidesToScroll={1} 
@@ -92,24 +110,21 @@ const ProductCarousel = () => {
         dots={false} 
         
         >
-        <ImgContainer onMouseEnter={()=>handleThumbnailHover(ProductPreview1)}>
-            <CarouselImg  src={ProductPreview1} alt="Thumbnail 1"/>
-        </ImgContainer>
-        <ImgContainer onMouseEnter={()=>handleThumbnailHover(ProductPreview2)}>
-            <CarouselImg src={ProductPreview2} alt="Thumbnail 2"/>
-        </ImgContainer>
-        <ImgContainer onMouseEnter={()=>handleThumbnailHover(ProductPreview3)}>
-            <CarouselImg src={ProductPreview3} alt="Thumbnail 3"/>
-        </ImgContainer>
-        <ImgContainer onMouseEnter={()=>handleThumbnailHover(ProductPreview4)}>
-            <CarouselImg src={ProductPreview4} alt="Thumbnail 4"/>
-        </ImgContainer>
-        <ImgContainer onMouseEnter={()=>handleThumbnailHover(ProductPreview5)}>
-            <CarouselImg src={ProductPreview5} alt="Thumbnail 5"/>
-        </ImgContainer>
-        <ImgContainer onMouseEnter={()=>handleThumbnailHover(ProductPreview6)}>
-            <CarouselImg src={ProductPreview6} alt="Thumbnail 6"/>
-        </ImgContainer>
+        {initialCarouselImages.map((imgSrc, index) => (
+            <ImgContainer
+                key={index}
+                onMouseEnter={()=> handleInternalHover(imgSrc)}
+            >
+                <CarouselImg
+                    src={imgSrc}
+                    alt={`Thumbnail ${index + 1}`}
+                    preview={{ toolbarRender: () => null }}
+                />
+            </ImgContainer>
+        ))}
+
+
+      
         </StyleCarouselWrapper>
         </>
     )

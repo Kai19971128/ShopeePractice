@@ -9,6 +9,8 @@ const Container = styled.div`
     box-sizing: border-box;
     padding: 16px;
     
+    
+    
     @media screen and (max-width: 769px) {
         width: 90%;
     }
